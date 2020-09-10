@@ -1,0 +1,102 @@
+package Lab;
+import java.time.LocalDate;
+
+
+class TrainShedule {
+
+    private String ArrivalStation;
+    private String DepartureStation;
+    private String ArrivalPlatform;
+    private String DeparturePlatform;
+    private double Price;
+    private LocalDate ArrivalTime;
+    private LocalDate DepartureTime;
+
+    
+    public String getArrivalStation() {
+        return ArrivalStation = "Одесса";
+    }
+
+    public void setArrivalStation(String ArrivalStation) {
+        if (ArrivalStation.length() > 15) {
+            this.ArrivalStation = "Error :(";
+        } else {
+            this.ArrivalStation = ArrivalStation;
+        }
+    }
+
+    public String getDepartureStation() {
+        return DepartureStation;
+    }
+
+    public void setDepartureStation(String DepartureStation) {
+        if (DepartureStation.length() > 15) {
+            this.DepartureStation= "Error :(";
+        }
+        else {
+            this.DepartureStation = DepartureStation;
+        }
+    }
+
+    public String getArrivalPlatform() {
+        return ArrivalPlatform = "Одесса";
+    }
+
+    public void setArrivalPlatform(String ArrivalPlatform) {
+        if (ArrivalPlatform.length() > 15) {
+            this.ArrivalPlatform = "Error :(";
+        } else {
+            this.ArrivalPlatform = ArrivalPlatform;
+        }
+    }
+
+    public String getDeparturePlatform() {
+        return DeparturePlatform;
+    }
+
+    public void setDeparturePlatform(String DeparturePlatform) {
+        if (DeparturePlatform.length() > 15) {
+            this.DeparturePlatform= "Error :(";
+        }
+        else {
+            this.DeparturePlatform = DeparturePlatform;
+        }
+    }
+
+    public double getPrice() {
+        return Price;
+    }
+
+    public void setPrice(double Price) {
+        try {
+            if (Price < 0) {
+                this.Price = 0;
+            } else {
+                this.Price = Price;
+            }
+        }
+        catch (IllegalArgumentException e) {
+            this.Price = 0;
+            System.out.print(e.getMessage());
+        }
+
+    }
+
+    public LocalDate getArrivalTime() {
+        return ArrivalTime;
+    }
+
+    public void setArrivalTime(LocalDate localDateProperty) {
+        this.ArrivalTime = localDateProperty;
+    }
+
+    public LocalDate getDepartureTime() {
+        return DepartureTime;
+    }
+
+    public void setDepartureTime(LocalDate localDateProperty) {
+        this.DepartureTime = localDateProperty;
+    }
+}
+
+
