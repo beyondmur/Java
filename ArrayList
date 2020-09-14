@@ -1,0 +1,22 @@
+package Lab.Lab1;
+
+import java.util.ArrayList;
+
+public class Trips {
+   public ArrayList<Trip> schedule;
+
+   public Trips() {
+
+      this.schedule = new ArrayList<>();
+   }
+
+   @Override
+   public String toString() {
+      String schedules = "";
+
+      for (Trip trip:schedule)
+         schedules += trip + "\n";
+
+      return "Trips:\n" + schedules;
+   }
+}
