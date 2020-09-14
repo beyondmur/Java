@@ -1,102 +1,50 @@
 package Lab;
-import java.time.LocalDate;
+
+import Lab.classes.TrainNumber;
+import Lab.classes.Cities;
+import Lab.classes.Trip;
+import Lab.classes.Trips;
+import java.sql.Time;
 
 
-class TrainShedule {
+public class Main {
 
-    private String ArrivalStation;
-    private String DepartureStation;
-    private String ArrivalPlatform;
-    private String DeparturePlatform;
-    private double Price;
-    private LocalDate ArrivalTime;
-    private LocalDate DepartureTime;
+    public static <and> void main(String[] args) {
+        //TrainNumber trainNumber = new TrainNumber(40, 150);
 
-    
-    public String getArrivalStation() {
-        return ArrivalStation = "Одесса";
-    }
+        Cities.list.add("Odessa");
+        Cities.list.add("Herson");
+        Cities.list.add("Nikolaev");
+        Cities.list.add("Kiev");
+        Cities.list.add("Lviv");
+        Cities.list.add("Poltava");
+        Cities.list.add("Venezia");
 
-    public void setArrivalStation(String ArrivalStation) {
-        if (ArrivalStation.length() > 15) {
-            this.ArrivalStation = "Error :(";
-        } else {
-            this.ArrivalStation = ArrivalStation;
+
+        System.out.println("");
+        Trips trips = new Trips();
+
+        trips.schedule.add(new Trip(1, new TrainNumber(50, 140), new Time(8,35,0), new Time(14,40,20),150 ));
+        trips.schedule.add(new Trip(2, new TrainNumber(90, 200), new Time(7,25,0), new Time(12,20,10),250 ));
+        trips.schedule.add(new Trip(3, new TrainNumber(30, 90), new Time(8,20,0), new Time(13,20,00),400 ));
+
+        System.out.println(trips);
+
+        int i = 0;
+        for (String city:Cities.list) {
+            System.out.println(i++ + ": " + city);
         }
-    }
 
-    public String getDepartureStation() {
-        return DepartureStation;
-    }
+        System.out.println(' ');
 
-    public void setDepartureStation(String DepartureStation) {
-        if (DepartureStation.length() > 15) {
-            this.DepartureStation= "Error :(";
-        }
-        else {
-            this.DepartureStation = DepartureStation;
-        }
-    }
-
-    public String getArrivalPlatform() {
-        return ArrivalPlatform = "Одесса";
-    }
-
-    public void setArrivalPlatform(String ArrivalPlatform) {
-        if (ArrivalPlatform.length() > 15) {
-            this.ArrivalPlatform = "Error :(";
-        } else {
-            this.ArrivalPlatform = ArrivalPlatform;
-        }
-    }
-
-    public String getDeparturePlatform() {
-        return DeparturePlatform;
-    }
-
-    public void setDeparturePlatform(String DeparturePlatform) {
-        if (DeparturePlatform.length() > 15) {
-            this.DeparturePlatform= "Error :(";
-        }
-        else {
-            this.DeparturePlatform = DeparturePlatform;
-        }
-    }
-
-    public double getPrice() {
-        return Price;
-    }
-
-    public void setPrice(double Price) {
-        try {
-            if (Price < 0) {
-                this.Price = 0;
-            } else {
-                this.Price = Price;
+        int[] n  = {1,2,3,4,5,6,7};
+        System.out.println("Choose the city: ");
+        for (Trip temptrip:trips.schedule) {
+            if (temptrip.getCity_id() == n.length);
+                System.out.println(temptrip);
             }
+
         }
-        catch (IllegalArgumentException e) {
-            this.Price = 0;
-            System.out.print(e.getMessage());
-        }
-
     }
-
-    public LocalDate getArrivalTime() {
-        return ArrivalTime;
-    }
-
-    public void setArrivalTime(LocalDate localDateProperty) {
-        this.ArrivalTime = localDateProperty;
-    }
-
-    public LocalDate getDepartureTime() {
-        return DepartureTime;
-    }
-
-    public void setDepartureTime(LocalDate localDateProperty) {
-        this.DepartureTime = localDateProperty;
-    }
-}
 
 
