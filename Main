@@ -1,9 +1,9 @@
 package Lab;
 
-import Lab.classes.TrainNumber;
-import Lab.classes.Cities;
-import Lab.classes.Trip;
-import Lab.classes.Trips;
+import Lab1.TrainNumber;
+import Lab1.Cities;
+import Lab1.Trip;
+import Lab1.Trips;
 import java.sql.Time;
 
 
