@@ -1,0 +1,72 @@
+package Lab;
+
+
+import java.sql.Time;
+import java.util.Date;
+
+
+
+public class Trip {
+   int city_id;
+   TrainNumber number;
+   Time departureTime;
+   Time arrivalTime;
+   double price;
+
+   public int getCity_id() {
+      return city_id;
+   }
+
+   public void setCity_id(int city_id) {
+      this.city_id = city_id;
+   }
+
+   public TrainNumber getNumber() {
+      return number;
+   }
+
+   public void setNumber(TrainNumber number) {
+      this.number = number;
+   }
+
+   public Time getDepartureTime() {
+      return departureTime;
+   }
+
+   public void setDepartureTime(Time departureTime) {
+      this.departureTime = departureTime;
+   }
+
+   public Date getArrivalTime() {
+      return arrivalTime;
+   }
+
+   public void setArrivalTime(Time arrivalTime) {
+      this.arrivalTime = arrivalTime;
+   }
+
+   public double getPrice() {
+      return price;
+   }
+
+   public void setPrice(double price) {
+      this.price = price;
+   }
+
+   public Trip(int city_id, TrainNumber munber, Time departureTime, Time arrivalTime, double price) {
+      this.city_id = city_id;
+      this.number = munber;
+      this.departureTime = departureTime;
+      this.arrivalTime = arrivalTime;
+      this.price = price;
+   }
+
+   @Override
+   public String toString() {
+      return "Trip{" +
+            Cities.list.get(city_id) + ", Train number: " + number +
+            ", DepartureTime: " + String.format("%02d", departureTime.getHours())+":"+String.format("%02d", departureTime.getMinutes()) +
+            ", ArrivalTime: " + String.format("%02d", arrivalTime.getHours())+":"+String.format("%02d", arrivalTime.getMinutes()) +
+            ", Price: " + price + '}';
+   }
+}
